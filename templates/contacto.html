@@ -1,0 +1,65 @@
+{% extends 'base.html' %} {% block title %}Contacto{% endblock %} {% block content %}
+<!-- Page content-->
+<section class="py-5">
+    <div class="container px-5">
+        <!-- Contact form-->
+        <div class="bg-light rounded-4 py-5 px-4 px-md-5">
+            <div class="text-center mb-5">
+                <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 mb-3"><i class="bi bi-envelope"></i></div>
+                <h1 class="fw-bolder">Ponte en contacto</h1>
+                <p class="lead fw-normal text-muted mb-0">!Trabajemos juntos!</p>
+            </div>
+            <div class="row gx-5 justify-content-center">
+                <div class="col-lg-8 col-xl-6">
+                    <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                        <!-- Name input-->
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="name" type="text" placeholder="Introduce tu nombre..." data-sb-validations="required" />
+                            <label for="name">Nombre completo</label>
+                            <div class="invalid-feedback" data-sb-feedback="name:required">Se requiere un nombre.</div>
+                        </div>
+                        <!-- Email address input-->
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
+                            <label for="email">Email</label>
+                            <div class="invalid-feedback" data-sb-feedback="email:required">Se requiere un correo electrónico.</div>
+                            <div class="invalid-feedback" data-sb-feedback="email:email">El correo electrónico no es válido.</div>
+                        </div>
+                        <!-- Phone number input-->
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="phone" type="tel" placeholder="(591) 456-7890" data-sb-validations="required" />
+                            <label for="phone">Número de teléfono</label>
+                            <div class="invalid-feedback" data-sb-feedback="phone:required">Se requiere un número de teléfono.</div>
+                        </div>
+                        <!-- Message input-->
+                        <div class="form-floating mb-3">
+                            <textarea class="form-control" id="message" type="text" placeholder="Ingrese su mensaje aquí..." style="height: 10rem" data-sb-validations="required"></textarea>
+                            <label for="message">Mensage</label>
+                            <div class="invalid-feedback" data-sb-feedback="message:required">Se requiere un mensaje.</div>
+                        </div>
+
+                        <!-- Toast de éxito -->
+                        <div style="z-index: 1100;" class="toast align-items-center text-bg-success border-0 position-fixed bottom-0 end-0 m-3" id="submitSuccessToast" role="alert" aria-live="assertive" aria-atomic="true">
+                            <div class="d-flex">
+                                <div class="toast-body">
+                                    ¡Envío de formulario exitoso!
+                                </div>
+                                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+                            </div>
+                        </div>
+
+                        <div class="d-none" id="submitErrorMessage">
+                            <div class="text-center text-danger mb-3">¡Error al enviar el mensaje!</div>
+                        </div>
+                        <!-- Submit Button-->
+                        <div class="d-grid">
+                            <button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Enviar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
